@@ -1,0 +1,9 @@
+# Forçar a linguagem do Vagrantfile como Ruby
+Vagrantfile linguist-language=Ruby
+
+# Contabilizar arquivos YAML (docker-compose, configs)
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+
+# Manter scripts como Shell
+*.sh linguist-language=Shell
