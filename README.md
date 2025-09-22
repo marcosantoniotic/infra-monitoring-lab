@@ -1,6 +1,6 @@
 # Infra Monitoring Lab v1.0.0
 
-[![CI](https://github.com/marnep/infra-monitoring-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/marnep/infra-monitoring-lab/actions/workflows/ci.yml)
+[![CI](https://github.com/marcosantoniotic/infra-monitoring-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/marnep/infra-monitoring-lab/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![Vagrant](https://img.shields.io/badge/vagrant-ready-green.svg)
