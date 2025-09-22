@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  traefik:
+    image: traefik:v3.5.0
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    command:
+      - --api.dashboard=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --providers.file.filename=/etc/traefik/traefik_dynamic.yml
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`traefik.marnep.com.br`) || Host(`192.168.56.50`)"
+      - "traefik.http.routers.api.service=api@internal"
+      - "traefik.http.routers.api.entrypoints=web"
+      - "traefik.http.routers.api.middlewares=auth@file"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /docker/volumes/traefik_data/traefik_dynamic.yml:/etc/traefik/traefik_dynamic.yml:ro
+    networks:
+      - monitoring-network
+
+networks:
+  monitoring-network:
+    external: true

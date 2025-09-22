@@ -1,0 +1,6 @@
+.vagrant/
+*.log
+*.tmp
+*.bak
+*.swp
+/var/lib/docker-volumes/

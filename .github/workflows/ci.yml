@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Validate etapa1-portainer
+        run: docker compose -f etapa1-portainer/docker-compose.yml config -q
+      - name: Validate etapa2-traefik
+        run: docker compose -f etapa2-traefik/docker-compose.yml config -q
+      - name: Validate etapa3-monitoring
+        run: docker compose -f etapa3-monitoring/docker-compose.yml config -q
